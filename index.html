@@ -1,58 +1,44 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>S.S Songs</title>
-
-  <link rel="stylesheet" href="style.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S.S SONGS</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="phone-frame">
+<audio id="audioPlayer"></audio>
 
-    <h1 class="logo">S.S SONGS</h1>
+<div class="bg-glow glow1"></div>
+<div class="bg-glow glow2"></div>
+<div class="bg-glow glow3"></div>
 
-    <div class="card">
-      <img id="cover" src="images/cover1.jpg" alt="cover">
-
-      <div class="song-info">
-        <h2 id="songTitle">Cosmic Waves</h2>
-        <p id="artist">Luna Sol</p>
-      </div>
+<div class="app">
+    <div class="top-bar">
+        <h1 id="songTitle">S.S SONGS</h1>
+        <p id="artist">Harsh Music Game</p>
     </div>
 
-    <div class="buttons">
+    <div class="album-container">
+        <img id="cover" src="images/cover1.jpg" alt="cover">
+    </div>
 
-      <button class="music-btn cyan" onclick="playSong(0)">
-        <span>1</span>
-      </button>
-
-      <button class="music-btn purple active" onclick="playSong(1)">
-        <span>2</span>
-      </button>
-
-      <button class="music-btn pink" onclick="playSong(2)">
-        <span>3</span>
-      </button>
+    <div class="track-info">
+        <span id="trackText">TRACK 1 ACTIVE</span>
 
     </div>
 
-    <div class="bottom-bar">
-      <p>Now Playing:</p>
-      <h3 id="bottomTitle">Cosmic Waves</h3>
-      <span id="trackText">Track 1 Active</span>
+    <div class="controls">
+        <button class="btn cyan" onclick="playSong(0)">1</button>
+        <button class="btn purple" onclick="playSong(1)">2</button>
+        <button class="btn pink" onclick="playSong(2)">3</button>
     </div>
+</div>
 
-  </div>
-
-  <audio id="audioPlayer"></audio>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
