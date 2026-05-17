@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S.S Songs</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="phone-frame">
+
+    <h1 class="logo">S.S SONGS</h1>
+
+    <div class="card">
+      <img id="cover" src="images/cover1.jpg" alt="cover">
+
+      <div class="song-info">
+        <h2 id="songTitle">Cosmic Waves</h2>
+        <p id="artist">Luna Sol</p>
+      </div>
+    </div>
+
+    <div class="buttons">
+
+      <button class="music-btn cyan" onclick="playSong(0)">
+        <span>1</span>
+      </button>
+
+      <button class="music-btn purple active" onclick="playSong(1)">
+        <span>2</span>
+      </button>
+
+      <button class="music-btn pink" onclick="playSong(2)">
+        <span>3</span>
+      </button>
+
+    </div>
+
+    <div class="bottom-bar">
+      <p>Now Playing:</p>
+      <h3 id="bottomTitle">Cosmic Waves</h3>
+      <span id="trackText">Track 1 Active</span>
+    </div>
+
+  </div>
+
+  <audio id="audioPlayer"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
