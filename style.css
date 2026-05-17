@@ -1,64 +1,177 @@
+/* GLOBAL RESETS & STYLES */
 * {
-  transform: scale(0.95);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.cyan {
-  box-shadow:
-    0 0 15px #00f0ff,
-    0 0 40px rgba(0,240,255,0.5);
+body {
+    background-color: #0a0a16;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
-.purple {
-  box-shadow:
-    0 0 15px #9b4dff,
-    0 0 40px rgba(155,77,255,0.6);
+/* ATTRACTIVE EYE-CATCHY BACKGROUND GLOWS */
+.bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: 1;
+    opacity: 0.4;
+    pointer-events: none;
+}
+.glow1 {
+    width: 400px;
+    height: 400px;
+    background: #00e1ff;
+    top: -10%;
+    left: -10%;
+}
+.glow2 {
+    width: 500px;
+    height: 500px;
+    background: #8a2eff;
+    bottom: -10%;
+    right: -10%;
+}
+.glow3 {
+    width: 300px;
+    height: 300px;
+    background: #ff007f;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.pink {
-  box-shadow:
-    0 0 15px #ff3ef2,
-    0 0 40px rgba(255,62,242,0.6);
+/* MAIN APP WRAPPER (Glassmorphism Effect) */
+.app {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 40px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-.bottom-bar {
-  width: calc(100% - 50px);
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-
-  padding: 18px;
-  border-radius: 18px;
-
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-
-  text-align: center;
-
-  box-shadow:
-    0 0 25px rgba(255,255,255,0.08);
+/* TOP HEADING SECTION */
+.top-bar h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #00e1ff, #8a2eff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
 }
 
-.bottom-bar p {
-  color: #bbb;
-  font-size: 15px;
+.top-bar p {
+    font-size: 0.95rem;
+    color: #a0a0c0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.bottom-bar h3 {
-  color: white;
-  margin-top: 5px;
-  font-size: 24px;
+/* ALBUM IMAGE CONTAINER */
+.album-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 0;
 }
 
-.bottom-bar span {
-  display: block;
-  margin-top: 5px;
-  color: #999;
-  font-size: 14px;
+#cover {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+    flex-shrink: 0;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(0, 225, 255, 0.2),
+        0 0 60px rgba(138, 46, 255, 0.2);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-@media(max-width: 420px) {
-  .phone-frame {
-    width: 95%;
-    min-height: 95vh;
-  }
+/* TRACK METADATA DISPLAY */
+.track-info {
+    margin-bottom: 30px;
+}
+#trackText {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    color: #ff007f;
+    letter-spacing: 2px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+#bottomTitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* CONTROLS & DESIGNER BUTTONS */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button-Specific Glowing Theme Variants */
+.btn.cyan:hover {
+    background: #00e1ff;
+    color: #050510;
+    box-shadow: 0 0 20px rgba(0, 225, 255, 0.6);
+    transform: translateY(-5px);
+}
+
+.btn.purple:hover {
+    background: #8a2eff;
+    color: white;
+    box-shadow: 0 0 20px rgba(138, 46, 255, 0.6);
+    transform: translateY(-5px);
+}
+
+.btn.pink:hover {
+    background: #ff007f;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
+    transform: translateY(-5px);
+}
+
+.btn:active {
+    transform: translateY(-1px);
 }
